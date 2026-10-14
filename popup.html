@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Emirates NBA Cup 2026</title>
+<link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+
+  <!-- COUNTDOWN — always the first thing shown -->
+  <div class="countdown-banner" id="countdown-banner">
+    <div class="countdown-top">
+      <img src="icons/icon-32.png" alt="" class="countdown-icon" />
+      <span class="countdown-title">Emirates NBA Cup 2026</span>
+    </div>
+    <div class="countdown-label" id="countdown-label">Loading countdown…</div>
+    <div class="countdown-clock" id="countdown-clock">
+      <div class="c-unit"><span id="cd-days">--</span><small>days</small></div>
+      <div class="c-unit"><span id="cd-hours">--</span><small>hrs</small></div>
+      <div class="c-unit"><span id="cd-mins">--</span><small>min</small></div>
+      <div class="c-unit"><span id="cd-secs">--</span><small>sec</small></div>
+    </div>
+    <div class="countdown-sub" id="countdown-sub">All times US Eastern (ET)</div>
+  </div>
+
+  <!-- SCORES BY DATE -->
+  <section class="scores-section">
+    <div class="scores-header">
+      <h2 id="scores-title">Scores</h2>
+      <button id="refresh-btn" class="icon-btn" title="Refresh">🔄</button>
+    </div>
+    <div class="date-control">
+      <input type="date" id="score-date" min="2025-10-01" max="2026-12-31" />
+      <button id="fetch-btn">Get Scores</button>
+    </div>
+    <div id="scores-body">
+      <p class="scores-msg">Pick a date to see scores.</p>
+    </div>
+  </section>
+
+  <a class="visit-btn" href="https://nbacuplive.com/" target="_blank" rel="noopener">🔗 Visit NBA Cup Live for full coverage</a>
+
+  <!-- REFERENCE TABS -->
+  <nav class="tabs" id="tabs">
+    <button class="tab-btn active" data-tab="schedule">📅 Schedule</button>
+    <button class="tab-btn" data-tab="groups">📊 Groups</button>
+    <button class="tab-btn" data-tab="teams">🏀 Teams</button>
+    <button class="tab-btn" data-tab="standings">🏆 Standings</button>
+  </nav>
+
+  <main class="panels">
+
+    <!-- SCHEDULE -->
+    <section class="panel active" id="panel-schedule">
+      <div class="card">
+        <h2>Group Play — Cup Nights</h2>
+        <ul class="date-list">
+          <li><span class="date-chip">Fri Oct 30</span> Tip-off, Cup Night 1</li>
+          <li><span class="date-chip">Fri Nov 6</span> Cup Night 2</li>
+          <li><span class="date-chip">Fri Nov 13</span> Cup Night 3</li>
+          <li><span class="date-chip">Fri Nov 20</span> Cup Night 4</li>
+          <li><span class="date-chip">Tue Nov 24</span> Thanksgiving Eve Cup Night</li>
+          <li><span class="date-chip">Wed Nov 25</span> Cup Night</li>
+          <li><span class="date-chip">Fri Nov 27</span> Black Friday, final Group Play night</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>Knockout Rounds</h2>
+        <ul class="date-list">
+          <li><span class="date-chip gold">Dec 4–5</span> Quarterfinals</li>
+          <li><span class="date-chip gold">Dec 8–9</span> Semifinals</li>
+          <li><span class="date-chip red">Dec 11</span> Championship — Hinkle Fieldhouse</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- GROUPS -->
+    <section class="panel" id="panel-groups">
+      <div class="conf-heading east">Eastern Conference</div>
+      <div class="card group-card">
+        <h3>East Group A</h3>
+        <ul class="team-list">
+          <li>Detroit Pistons</li><li>Toronto Raptors</li><li>Orlando Magic</li><li>Milwaukee Bucks</li><li>Brooklyn Nets</li>
+        </ul>
+      </div>
+      <div class="card group-card">
+        <h3>East Group B</h3>
+        <ul class="team-list">
+          <li>New York Knicks</li><li>Cleveland Cavaliers</li><li>Philadelphia 76ers</li><li>Miami Heat</li><li>Indiana Pacers</li>
+        </ul>
+      </div>
+      <div class="card group-card">
+        <h3>East Group C</h3>
+        <ul class="team-list">
+          <li>Boston Celtics</li><li>Atlanta Hawks</li><li>Charlotte Hornets</li><li>Chicago Bulls</li><li>Washington Wizards</li>
+        </ul>
+      </div>
+
+      <div class="conf-heading west">Western Conference</div>
+      <div class="card group-card">
+        <h3>West Group A</h3>
+        <ul class="team-list">
+          <li>Denver Nuggets</li><li>Houston Rockets</li><li>Phoenix Suns</li><li>Dallas Mavericks</li><li>Utah Jazz</li>
+        </ul>
+      </div>
+      <div class="card group-card">
+        <h3>West Group B</h3>
+        <ul class="team-list">
+          <li>Oklahoma City Thunder</li><li>Minnesota Timberwolves</li><li>LA Clippers</li><li>New Orleans Pelicans</li><li>Memphis Grizzlies</li>
+        </ul>
+      </div>
+      <div class="card group-card">
+        <h3>West Group C</h3>
+        <ul class="team-list">
+          <li>San Antonio Spurs</li><li>Los Angeles Lakers</li><li>Portland Trail Blazers</li><li>Golden State Warriors</li><li>Sacramento Kings</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- TEAMS -->
+    <section class="panel" id="panel-teams">
+      <div class="search-wrap">
+        <input type="text" id="team-search" placeholder="Search 30 teams…" />
+      </div>
+      <ul class="team-index" id="team-index"></ul>
+    </section>
+
+    <!-- STANDINGS -->
+    <section class="panel" id="panel-standings">
+      <div class="card">
+        <h2>Group standings</h2>
+        <p>Standings update after every Cup Night once Group Play tips off on Oct 30. Check live, up-to-the-minute standings and scores on NBA Cup Live.</p>
+      </div>
+      <div class="card note">
+        <h2>Tiebreakers</h2>
+        <p>Group winners and each conference's wild card are decided by Group Play record, then head-to-head result, then point differential among tied teams.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="config.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
